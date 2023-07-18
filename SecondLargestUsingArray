@@ -1,0 +1,26 @@
+package com.demo;
+
+import java.util.Arrays;
+
+public class SecondLargestUsingArray {
+	 public static void main(String[] args) {
+		 int[] arr=new int[] {1,2,3,5,6};
+		 int secondLargest = Arrays.stream(arr)
+                  .boxed()  // Convert int[] to Integer[]
+                  .sorted((a, b) -> b.compareTo(a)) 
+                  .skip(1)// Sort in descending order
+                  .mapToInt(Integer::intValue) // Convert back to int[]
+                  .findFirst().getAsInt();
+
+// Return the second element of the sorted array
+		  System.out.println( secondLargest);
+	 }
+	}
+	
+
+
+
+
+
+
+
